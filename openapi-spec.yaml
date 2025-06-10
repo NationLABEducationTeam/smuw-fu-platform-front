@@ -653,7 +653,7 @@ paths:
         - url: http://43.203.148.128:8000
       parameters:
         - name: district
-          in: path
+          in: query
           required: false
           schema:
             type: string
