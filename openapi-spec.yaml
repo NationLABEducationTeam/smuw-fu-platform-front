@@ -1,0 +1,732 @@
+openapi: 3.0.0
+info:
+  title: SMWU Food Business Analytics API
+  description: API for food business analytics including location data, restaurant information, sales data, and trend analysis
+  version: 1.0.0
+  contact:
+    name: SMWU Food Business Team
+    email: support@smwu-food.com
+
+servers:
+  - url: https://c8v9u0g8qg.execute-api.ap-northeast-2.amazonaws.com/prod1
+    description: AWS API Gateway Production Server
+  - url: http://43.203.148.128:8000
+    description: FastAPI EC2 Server
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token from AWS Cognito
+
+  schemas:
+    Location:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Location name
+        administrative_code:
+          type: string
+          description: Administrative district code
+        population_code:
+          type: string
+          description: Population district code
+        moneyData:
+          type: object
+          properties:
+            income:
+              type: number
+              description: Average monthly income (in 10,000 KRW)
+            consumption:
+              type: number
+              description: Average monthly consumption (in KRW)
+
+    Restaurant:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Restaurant name
+        address:
+          type: string
+          description: Restaurant address
+        latitude:
+          type: number
+          format: double
+          description: Latitude coordinate
+        longitude:
+          type: number
+          format: double
+          description: Longitude coordinate
+        category:
+          type: string
+          description: Food category code
+
+    DistrictInfo:
+      type: object
+      properties:
+        administrative_code:
+          type: string
+          description: Administrative district code
+        tot_ppltn:
+          type: number
+          description: Total population
+        area:
+          type: number
+          description: Area in square kilometers
+        population_density:
+          type: number
+          description: Population density
+
+    TrendData:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: Trending keyword
+        search_volume:
+          type: number
+          description: Search volume
+        growth_rate:
+          type: number
+          description: Growth rate percentage
+        period:
+          type: string
+          enum: [daily, weekly, monthly, quarterly]
+
+    YouTubeVideo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: YouTube video ID
+        title:
+          type: string
+          description: Video title
+        description:
+          type: string
+          description: Video description
+        thumbnail:
+          type: string
+          format: uri
+          description: Thumbnail URL
+        view_count:
+          type: number
+          description: View count
+        published_at:
+          type: string
+          format: date-time
+
+    MoneyData:
+      type: object
+      properties:
+        income:
+          type: number
+          description: Average income data
+        consumption:
+          type: number
+          description: Average consumption data
+        district_code:
+          type: string
+          description: District code
+
+    SalesData:
+      type: object
+      properties:
+        sales_volume:
+          type: number
+          description: Sales volume
+        customer_count:
+          type: number
+          description: Customer count
+        price_index:
+          type: number
+          description: Price index
+        growth_rate:
+          type: number
+          description: Growth rate
+        period:
+          type: string
+          description: Time period
+
+    CommercialAreaChange:
+      type: object
+      properties:
+        district_code:
+          type: string
+          description: District code
+        change_rate:
+          type: number
+          description: Commercial area change rate
+        period:
+          type: string
+          description: Analysis period
+
+    KeywordInsights:
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+          description: Related keywords
+        insights:
+          type: array
+          items:
+            type: object
+            properties:
+              category:
+                type: string
+              score:
+                type: number
+              description:
+                type: string
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+        code:
+          type: string
+          description: Error code
+        details:
+          type: string
+          description: Additional error details
+
+paths:
+  /api/location:
+    get:
+      summary: Get location information
+      description: Retrieve location data by district code (public endpoint)
+      tags:
+        - Location
+      parameters:
+        - name: district_code
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Administrative district code
+      responses:
+        '200':
+          description: Location information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Location not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/restaurant:
+    post:
+      summary: Get restaurant data
+      description: Retrieve restaurants by location and category
+      tags:
+        - Restaurant
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                location:
+                  type: string
+                  description: Location identifier
+                category:
+                  type: string
+                  description: Food category code
+                administrative_code:
+                  type: string
+                  description: Administrative district code
+      responses:
+        '200':
+          description: Restaurant data retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/donginfo:
+    get:
+      summary: Get district information
+      description: Retrieve detailed district information including demographics
+      tags:
+        - District
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: population_code
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Population district code
+      responses:
+        '200':
+          description: District information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistrictInfo'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/search-trends:
+    post:
+      summary: Get search trend data
+      description: Retrieve trending keywords and search volume data
+      tags:
+        - Trends
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                period:
+                  type: string
+                  enum: [daily, weekly, monthly, quarterly]
+                  description: Trend analysis period
+                category:
+                  type: string
+                  description: Category filter
+      responses:
+        '200':
+          description: Trend data retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TrendData'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/youtube:
+    post:
+      summary: Get YouTube video data
+      description: Retrieve relevant YouTube videos for food business analysis
+      tags:
+        - YouTube
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: Search query
+                max_results:
+                  type: number
+                  description: Maximum number of results
+                  default: 10
+      responses:
+        '200':
+          description: YouTube videos retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  videos:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/YouTubeVideo'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/money:
+    post:
+      summary: Get income and consumption data
+      description: Retrieve financial data for specific districts
+      tags:
+        - Financial
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                district_code:
+                  type: string
+                  description: District code
+                period:
+                  type: string
+                  description: Analysis period
+      responses:
+        '200':
+          description: Financial data retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MoneyData'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/commercial-area-change:
+    post:
+      summary: Get commercial area change data
+      description: Analyze changes in commercial areas over time
+      tags:
+        - Commercial Analysis
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                district_code:
+                  type: string
+                  description: District code
+                start_period:
+                  type: string
+                  description: Start period for comparison
+                end_period:
+                  type: string
+                  description: End period for comparison
+      responses:
+        '200':
+          description: Commercial area change data retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommercialAreaChange'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/keyword-search:
+    post:
+      summary: Perform keyword search
+      description: Search for business insights using keywords
+      tags:
+        - Search
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keywords:
+                  type: array
+                  items:
+                    type: string
+                  description: Search keywords
+                filters:
+                  type: object
+                  description: Additional search filters
+      responses:
+        '200':
+          description: Keyword search results retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/estimate-sales:
+    post:
+      summary: Estimate sales data
+      description: Predict sales performance for specific locations and categories
+      tags:
+        - Sales Prediction
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                district_code:
+                  type: string
+                  description: District code
+                category:
+                  type: string
+                  description: Business category
+                parameters:
+                  type: object
+                  description: Additional parameters for estimation
+      responses:
+        '200':
+          description: Sales estimation completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesData'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/sales/district:
+    get:
+      summary: Get district sales data (API Gateway)
+      description: Retrieve sales data for specific districts
+      tags:
+        - Sales Data
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: district_code
+          in: query
+          required: true
+          schema:
+            type: string
+          description: District code
+        - name: period
+          in: query
+          schema:
+            type: string
+          description: Analysis period
+      responses:
+        '200':
+          description: District sales data retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesData'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/keyword-insights/analyze:
+    post:
+      summary: Analyze keyword insights
+      description: Advanced keyword analysis for business intelligence
+      tags:
+        - Keyword Analytics
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  description: Text to analyze
+                context:
+                  type: string
+                  description: Analysis context
+                options:
+                  type: object
+                  description: Analysis options
+      responses:
+        '200':
+          description: Keyword insights generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeywordInsights'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/couchbase-sales:
+    post:
+      summary: Get Couchbase sales data
+      description: Retrieve sales data from Couchbase database
+      tags:
+        - Sales Data
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: Database query
+                parameters:
+                  type: object
+                  description: Query parameters
+      responses:
+        '200':
+          description: Couchbase sales data retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SalesData'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  # FastAPI/EC2 Endpoints
+  /api/ec2-salesdata:
+    get:
+      summary: Get EC2 sales data (FastAPI)
+      description: Retrieve sales data from EC2 FastAPI server
+      tags:
+        - Sales Data (FastAPI)
+      servers:
+        - url: http://43.203.148.128:8000
+      parameters:
+        - name: district
+          in: path
+          required: false
+          schema:
+            type: string
+          description: District identifier
+        - name: category
+          in: query
+          schema:
+            type: string
+          description: Business category filter
+        - name: period
+          in: query
+          schema:
+            type: string
+          description: Time period filter
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 100
+          description: Maximum number of results
+      responses:
+        '200':
+          description: EC2 sales data retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SalesData'
+                  total:
+                    type: integer
+                    description: Total number of records
+                  page:
+                    type: integer
+                    description: Current page number
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+tags:
+  - name: Location
+    description: Location and geographical data operations
+  - name: Restaurant
+    description: Restaurant data and search operations
+  - name: District
+    description: Administrative district information
+  - name: Trends
+    description: Search trends and keyword analysis
+  - name: YouTube
+    description: YouTube video data retrieval
+  - name: Financial
+    description: Income and consumption financial data
+  - name: Commercial Analysis
+    description: Commercial area analysis and changes
+  - name: Search
+    description: Keyword search operations
+  - name: Sales Prediction
+    description: Sales estimation and prediction
+  - name: Sales Data
+    description: Historical sales data retrieval
+  - name: Sales Data (FastAPI)
+    description: Sales data from FastAPI/EC2 server
+  - name: Keyword Analytics
+    description: Advanced keyword analysis and insights 
