@@ -51,16 +51,7 @@ img, video {
     @apply text-sm sm:text-base;
   }
   
-  /* 사이드바 스타일을 위한 새로운 클래스 */
-  .sidebar-open {
-    @apply sm:ml-[280px] md:ml-[300px] lg:ml-[320px];
-    transition: margin 0.3s ease-in-out;
-  }
-  
-  .sidebar-closed {
-    margin-left: 0;
-    transition: margin 0.3s ease-in-out;
-  }
+
 }
 
 @layer base {

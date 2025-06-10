@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { NavSidebar } from '@/components/common/layout/sidebar/nav-sidebar'
 import { useRef, useEffect, useState } from 'react'
 import { ThemeToggle } from '@/components/3d-features/ThemeToggle'
 import { useTheme } from '@/lib/theme-provider'
@@ -107,16 +106,10 @@ export default function Home() {
 
   return (
     <main ref={containerRef} className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-[#051b2c] dark:to-[#0a2540] text-gray-900 dark:text-white overflow-hidden">
-      <NavSidebar />
       <ThemeToggle />
 
-      {/* 히어로 섹션 - lg 브레이크포인트에서 사이드바 너비만큼 마진 추가 */}
-      <section className={`
-        relative min-h-screen flex items-center justify-center 
-        py-12 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8
-        ${!isMobile ? 'lg:ml-[320px]' : ''} // 사이드바 너비만큼 마진
-        transition-all duration-300
-      `}>
+      {/* 히어로 섹션 */}
+      <section className="relative min-h-screen flex items-center justify-center py-12 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 transition-all duration-300">
         {/* 배경 효과 */}
         <motion.div 
           style={{ y: y1 }}
@@ -138,7 +131,7 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* 메인 콘텐츠 - 최대 너비 조정 */}
+        {/* 메인 콘텐츠 */}
         <motion.div 
           style={{ y: y1, opacity, scale }}
           className="relative z-10 text-center w-full max-w-5xl mx-auto space-y-8 sm:space-y-12"
@@ -192,9 +185,9 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 특징 섹션도 사이드바 너비 고려 */}
+      {/* 특징 섹션 */}
       <motion.section
-        className={`${!isMobile ? 'lg:ml-[320px]' : ''} transition-all duration-300`}
+        className="transition-all duration-300"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}

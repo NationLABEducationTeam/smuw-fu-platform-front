@@ -137,6 +137,7 @@ export function NavSidebar() {
   const [isMobile, setIsMobile] = useState(false);
   const { user, isAuthenticated, logout } = useAuth();
   const router = useRouter();
+  const isChatbotPage = pathname === '/chatbot';
 
   // 화면 크기 감지
   useEffect(() => {
@@ -177,6 +178,11 @@ export function NavSidebar() {
     await logout();
     router.push('/');
   };
+
+  // chatbot 페이지에서는 NavSidebar를 숨김
+  if (isChatbotPage) {
+    return null;
+  }
 
   return (
     <>

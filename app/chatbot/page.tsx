@@ -379,7 +379,7 @@ export default function Page() {
   return (
     <ProtectedRoute>
       <TooltipProvider>
-        <div className="flex-1 flex flex-col w-full h-[calc(100vh-64px)] pl-[320px] overflow-hidden">
+        <div className="w-full h-screen overflow-hidden">
           <ChatLayout
             sidebarContent={
               <ChatHistory

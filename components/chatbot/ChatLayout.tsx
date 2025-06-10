@@ -14,7 +14,7 @@ export function ChatLayout({ sidebarContent, mainContent }: ChatLayoutProps) {
   const sidebarWidth = 280
 
   return (
-    <div className="flex h-[calc(100vh-64px)] bg-gradient-to-b from-[#051b2c] to-[#0a2540] text-white overflow-hidden">
+    <div className="flex h-full bg-gradient-to-b from-[#051b2c] to-[#0a2540] text-white overflow-hidden">
       {/* 좌측 사이드바 (채팅 히스토리) */}
       <motion.div 
         className="h-full bg-[#0a1929]/80 backdrop-blur-md border-r border-white/10 z-20 relative overflow-hidden"

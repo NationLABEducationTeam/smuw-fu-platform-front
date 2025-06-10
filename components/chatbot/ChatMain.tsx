@@ -87,7 +87,7 @@ export function ChatMain({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="flex-1 flex items-center justify-center p-4 h-[calc(100vh-180px)] overflow-hidden"
+              className="flex-1 flex items-center justify-center p-4 h-full overflow-hidden"
             >
               <Card className="w-full max-w-2xl bg-white/10 backdrop-blur-md shadow-xl border-white/20 p-8">
                 <motion.div
@@ -171,7 +171,7 @@ export function ChatMain({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="flex-1 flex flex-col h-[calc(100vh-180px)] overflow-hidden"
+              className="flex-1 flex flex-col h-full overflow-hidden"
             >
               <ChatContainer 
                 messages={messages}
