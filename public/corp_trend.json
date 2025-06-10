@@ -1,0 +1,1230 @@
+{
+    "top10": {
+      "외식-한식": [
+        {
+          "avrgSlsAmt": 4204269,
+          "corpNm": "(주)에이치앤유푸드",
+          "brandNm": "하누소",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 10196
+        },
+        {
+          "avrgSlsAmt": 4111212,
+          "corpNm": "헤이브로(주)",
+          "brandNm": "형제닭발&오돌뼈",
+          "frcsCnt": 20,
+          "arUnitAvrgSlsAmt": 27964
+        },
+        {
+          "avrgSlsAmt": 3733862,
+          "corpNm": "엔타민푸드",
+          "brandNm": "어가반상",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 29407
+        },
+        {
+          "avrgSlsAmt": 3576080,
+          "corpNm": "(주)엔조이푸드시스템",
+          "brandNm": "일산생갈비",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 44701
+        },
+        {
+          "avrgSlsAmt": 2880000,
+          "corpNm": "흥에취한범",
+          "brandNm": "범",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 28800
+        },
+        {
+          "avrgSlsAmt": 2773993,
+          "corpNm": "(주)제이에스와이푸드",
+          "brandNm": "청기와타운",
+          "frcsCnt": 14,
+          "arUnitAvrgSlsAmt": 46233
+        },
+        {
+          "avrgSlsAmt": 2634487,
+          "corpNm": "(주)풀잎채",
+          "brandNm": "진고복식당",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 16591
+        },
+        {
+          "avrgSlsAmt": 2550000,
+          "corpNm": "(주)팔당원조칼제비에프앤비",
+          "brandNm": "팔당원조칼제비",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 33931
+        },
+        {
+          "avrgSlsAmt": 2458735,
+          "corpNm": "(주)엔조이푸드시스템",
+          "brandNm": "소플러스",
+          "frcsCnt": 25,
+          "arUnitAvrgSlsAmt": 23262
+        },
+        {
+          "avrgSlsAmt": 2348525,
+          "corpNm": "(주)피큐아이넷",
+          "brandNm": "두껍삼",
+          "frcsCnt": 5,
+          "arUnitAvrgSlsAmt": 15813
+        }
+      ],
+      "외식-치킨": [
+        {
+          "avrgSlsAmt": 983231,
+          "corpNm": "리치푸드(주)",
+          "brandNm": "치르치르",
+          "frcsCnt": 6,
+          "arUnitAvrgSlsAmt": 36416
+        },
+        {
+          "avrgSlsAmt": 877877,
+          "corpNm": "(주)씨엠케이푸드",
+          "brandNm": "치맥킹",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 17441
+        },
+        {
+          "avrgSlsAmt": 749040,
+          "corpNm": "교촌에프앤비(주)",
+          "brandNm": "교촌치킨",
+          "frcsCnt": 1365,
+          "arUnitAvrgSlsAmt": 34910
+        },
+        {
+          "avrgSlsAmt": 677880,
+          "corpNm": "(주)구도로",
+          "brandNm": "구도로통닭",
+          "frcsCnt": 75,
+          "arUnitAvrgSlsAmt": 18187
+        },
+        {
+          "avrgSlsAmt": 651270,
+          "corpNm": "(주)청년치킨",
+          "brandNm": "청년치킨",
+          "frcsCnt": 32,
+          "arUnitAvrgSlsAmt": 60371
+        },
+        {
+          "avrgSlsAmt": 597595,
+          "corpNm": "(주)비에이치씨",
+          "brandNm": "비에이치씨(BHC)",
+          "frcsCnt": 1991,
+          "arUnitAvrgSlsAmt": 30397
+        },
+        {
+          "avrgSlsAmt": 506701,
+          "corpNm": "행복한가족(주)",
+          "brandNm": "화락바베큐치킨",
+          "frcsCnt": 40,
+          "arUnitAvrgSlsAmt": 26600
+        },
+        {
+          "avrgSlsAmt": 495846,
+          "corpNm": "원앤원(주)",
+          "brandNm": "감탄계숯불치킨",
+          "frcsCnt": 9,
+          "arUnitAvrgSlsAmt": 27718
+        },
+        {
+          "avrgSlsAmt": 492786,
+          "corpNm": "웅스키친",
+          "brandNm": "찌웅이네숯불두마리치킨",
+          "frcsCnt": 10,
+          "arUnitAvrgSlsAmt": 29847
+        },
+        {
+          "avrgSlsAmt": 478005,
+          "corpNm": "(주)아이더스코리아",
+          "brandNm": "푸라닭",
+          "frcsCnt": 728,
+          "arUnitAvrgSlsAmt": 25874
+        }
+      ],
+      "외식-분식": [
+        {
+          "avrgSlsAmt": 2296882,
+          "corpNm": "(주)지강플래닝",
+          "brandNm": "보슬보슬",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 127604
+        },
+        {
+          "avrgSlsAmt": 808647,
+          "corpNm": "(주)참에프앤디",
+          "brandNm": "싸다김밥",
+          "frcsCnt": 71,
+          "arUnitAvrgSlsAmt": 33414
+        },
+        {
+          "avrgSlsAmt": 775489,
+          "corpNm": "(주)에이알피그룹",
+          "brandNm": "대림국수",
+          "frcsCnt": 14,
+          "arUnitAvrgSlsAmt": 34122
+        },
+        {
+          "avrgSlsAmt": 719883,
+          "corpNm": "(주)대대손손",
+          "brandNm": "대손관",
+          "frcsCnt": 9,
+          "arUnitAvrgSlsAmt": 12014
+        },
+        {
+          "avrgSlsAmt": 701266,
+          "corpNm": "(주)멘토푸디즘",
+          "brandNm": "마녀김밥",
+          "frcsCnt": 37,
+          "arUnitAvrgSlsAmt": 43590
+        },
+        {
+          "avrgSlsAmt": 671866,
+          "corpNm": "(주)에스에프이노베이션",
+          "brandNm": "스쿨푸드",
+          "frcsCnt": 77,
+          "arUnitAvrgSlsAmt": 27034
+        },
+        {
+          "avrgSlsAmt": 667386,
+          "corpNm": "(주)더씨앤디",
+          "brandNm": "온복비빔국수",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 44047
+        },
+        {
+          "avrgSlsAmt": 630688,
+          "corpNm": "(주)다온에프엔비",
+          "brandNm": "사담손만두",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 9391
+        },
+        {
+          "avrgSlsAmt": 589176,
+          "corpNm": "(주)아담스푸드앤로지스틱스",
+          "brandNm": "아담's 꼬마김밥",
+          "frcsCnt": 14,
+          "arUnitAvrgSlsAmt": 74780
+        },
+        {
+          "avrgSlsAmt": 558589,
+          "corpNm": "(주)최배달",
+          "brandNm": "최배달 떡순튀",
+          "frcsCnt": 42,
+          "arUnitAvrgSlsAmt": 37487
+        }
+      ],
+      "외식-일식": [
+        {
+          "avrgSlsAmt": 6654152,
+          "corpNm": "(주)즐거운세상",
+          "brandNm": "바르미스시뷔페",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 35135
+        },
+        {
+          "avrgSlsAmt": 2948142,
+          "corpNm": "(주)쿠우쿠우",
+          "brandNm": "쿠우쿠우",
+          "frcsCnt": 83,
+          "arUnitAvrgSlsAmt": 12285
+        },
+        {
+          "avrgSlsAmt": 2851711,
+          "corpNm": "(주)상무프랜차이즈",
+          "brandNm": "상무초밥",
+          "frcsCnt": 44,
+          "arUnitAvrgSlsAmt": 39928
+        },
+        {
+          "avrgSlsAmt": 1377584,
+          "corpNm": "(주)골든밥코리아",
+          "brandNm": "탐나종합어시장",
+          "frcsCnt": 50,
+          "arUnitAvrgSlsAmt": 29123
+        },
+        {
+          "avrgSlsAmt": 1348823,
+          "corpNm": "바른F&B",
+          "brandNm": "바른초밥",
+          "frcsCnt": 14,
+          "arUnitAvrgSlsAmt": 26754
+        },
+        {
+          "avrgSlsAmt": 1185479,
+          "corpNm": "(주)스시히로미",
+          "brandNm": "스시노칸도",
+          "frcsCnt": 25,
+          "arUnitAvrgSlsAmt": 30959
+        },
+        {
+          "avrgSlsAmt": 969048,
+          "corpNm": "(주)에스앤에스코퍼레이션",
+          "brandNm": "토끼정",
+          "frcsCnt": 16,
+          "arUnitAvrgSlsAmt": 13636
+        },
+        {
+          "avrgSlsAmt": 938902,
+          "corpNm": "(주)에프씨천상",
+          "brandNm": "이태원천상",
+          "frcsCnt": 5,
+          "arUnitAvrgSlsAmt": 14187
+        },
+        {
+          "avrgSlsAmt": 852733,
+          "corpNm": "스시투어",
+          "brandNm": "스시투어",
+          "frcsCnt": 11,
+          "arUnitAvrgSlsAmt": 20798
+        },
+        {
+          "avrgSlsAmt": 793839,
+          "corpNm": "(주)제이알에프앤씨",
+          "brandNm": "스시오블랙컨테이너",
+          "frcsCnt": 6,
+          "arUnitAvrgSlsAmt": 13388
+        }
+      ],
+      "외식-서양식": [
+        {
+          "avrgSlsAmt": 1737356,
+          "corpNm": "(주)더몰트하우스컴퍼니",
+          "brandNm": "더몰트하우스",
+          "frcsCnt": 5,
+          "arUnitAvrgSlsAmt": 22804
+        },
+        {
+          "avrgSlsAmt": 1329653,
+          "corpNm": "신스패밀리",
+          "brandNm": "파스타에반하다",
+          "frcsCnt": 11,
+          "arUnitAvrgSlsAmt": 258109
+        },
+        {
+          "avrgSlsAmt": 1225203,
+          "corpNm": "(주)씨에프씨(CFC)",
+          "brandNm": "클램(CLAM)",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 24591
+        },
+        {
+          "avrgSlsAmt": 1071660,
+          "corpNm": "(주)어나더해피",
+          "brandNm": "어나더키친",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 10856
+        },
+        {
+          "avrgSlsAmt": 927102,
+          "corpNm": "꼼떼(주)",
+          "brandNm": "꼼떼바베큐",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 14972
+        },
+        {
+          "avrgSlsAmt": 800000,
+          "corpNm": "(주)일승식품",
+          "brandNm": "돈까스클럽",
+          "frcsCnt": 35,
+          "arUnitAvrgSlsAmt": 9922
+        },
+        {
+          "avrgSlsAmt": 799577,
+          "corpNm": "(주)스토리에프씨",
+          "brandNm": "코지하우스",
+          "frcsCnt": 23,
+          "arUnitAvrgSlsAmt": 14774
+        },
+        {
+          "avrgSlsAmt": 783739,
+          "corpNm": "(주)웨이브",
+          "brandNm": "투파인드피터",
+          "frcsCnt": 26,
+          "arUnitAvrgSlsAmt": 10291
+        },
+        {
+          "avrgSlsAmt": 768735,
+          "corpNm": "수풀림컴퍼니",
+          "brandNm": "브런치앤디테라비",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 7687
+        },
+        {
+          "avrgSlsAmt": 748275,
+          "corpNm": "(주)에스앤에스코퍼레이션",
+          "brandNm": "미즈컨테이너",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 19545
+        }
+      ],
+      "외식-중식": [
+        {
+          "avrgSlsAmt": 3788601,
+          "corpNm": "(주)지강플래닝",
+          "brandNm": "무탄",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 47357
+        },
+        {
+          "avrgSlsAmt": 2388117,
+          "corpNm": "(주)에이치에스푸드컴퍼니",
+          "brandNm": "일일향",
+          "frcsCnt": 14,
+          "arUnitAvrgSlsAmt": 20664
+        },
+        {
+          "avrgSlsAmt": 1901621,
+          "corpNm": "(주)한빛",
+          "brandNm": "무궁화반점",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 47540
+        },
+        {
+          "avrgSlsAmt": 1658131,
+          "corpNm": "차알(주)",
+          "brandNm": "차알(Cha’R)",
+          "frcsCnt": 6,
+          "arUnitAvrgSlsAmt": 31906
+        },
+        {
+          "avrgSlsAmt": 1340460,
+          "corpNm": "성호푸드",
+          "brandNm": "메이탄",
+          "frcsCnt": 10,
+          "arUnitAvrgSlsAmt": 18158
+        },
+        {
+          "avrgSlsAmt": 1225303,
+          "corpNm": "(주)뽕사부컴퍼니",
+          "brandNm": "뽕사부",
+          "frcsCnt": 14,
+          "arUnitAvrgSlsAmt": 20138
+        },
+        {
+          "avrgSlsAmt": 1144966,
+          "corpNm": "(주)짬뽕관",
+          "brandNm": "짬뽕관",
+          "frcsCnt": 16,
+          "arUnitAvrgSlsAmt": 19446
+        },
+        {
+          "avrgSlsAmt": 1074658,
+          "corpNm": "(주)다함컴퍼니",
+          "brandNm": "북경짜장",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 21932
+        },
+        {
+          "avrgSlsAmt": 1016607,
+          "corpNm": "(주)세모담에프앤비",
+          "brandNm": "마차이짬뽕",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 31768
+        },
+        {
+          "avrgSlsAmt": 977500,
+          "corpNm": "더월드(theworld)",
+          "brandNm": "불이아",
+          "frcsCnt": 8,
+          "arUnitAvrgSlsAmt": 14533
+        }
+      ],
+      "외식-주점": [
+        {
+          "avrgSlsAmt": 2064480,
+          "corpNm": "(주)코리아엔에스",
+          "brandNm": "오비베어(OB BEAR)",
+          "frcsCnt": 23,
+          "arUnitAvrgSlsAmt": 17552
+        },
+        {
+          "avrgSlsAmt": 1639288,
+          "corpNm": "(주)정성",
+          "brandNm": "서울주막",
+          "frcsCnt": 9,
+          "arUnitAvrgSlsAmt": 9522
+        },
+        {
+          "avrgSlsAmt": 1364991,
+          "corpNm": "(주)아지트메이커",
+          "brandNm": "용용선생",
+          "frcsCnt": 64,
+          "arUnitAvrgSlsAmt": 26852
+        },
+        {
+          "avrgSlsAmt": 1236177,
+          "corpNm": "(주)대승인터컴",
+          "brandNm": "몽담(MONGDAM)",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 5826
+        },
+        {
+          "avrgSlsAmt": 1118974,
+          "corpNm": "(주)엘브라더스",
+          "brandNm": "코키펍(COCKY-PUB)",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 15505
+        },
+        {
+          "avrgSlsAmt": 908881,
+          "corpNm": "(주)에이치더블",
+          "brandNm": "시장을 여는 사람들",
+          "frcsCnt": 16,
+          "arUnitAvrgSlsAmt": 45891
+        },
+        {
+          "avrgSlsAmt": 894241,
+          "corpNm": "(주)타베코리아",
+          "brandNm": "오늘술집 주다방",
+          "frcsCnt": 24,
+          "arUnitAvrgSlsAmt": 11335
+        },
+        {
+          "avrgSlsAmt": 864556,
+          "corpNm": "(주)바론에프엔씨",
+          "brandNm": "잔잔",
+          "frcsCnt": 15,
+          "arUnitAvrgSlsAmt": 28258
+        },
+        {
+          "avrgSlsAmt": 789673,
+          "corpNm": "리치푸드(주)",
+          "brandNm": "뉴욕야시장",
+          "frcsCnt": 85,
+          "arUnitAvrgSlsAmt": 27321
+        },
+        {
+          "avrgSlsAmt": 784109,
+          "corpNm": "(주)타베코리아",
+          "brandNm": "푸른술집 할라",
+          "frcsCnt": 24,
+          "arUnitAvrgSlsAmt": 11002
+        }
+      ],
+      "외식-피자": [
+        {
+          "avrgSlsAmt": 1338094,
+          "corpNm": "피자는여기",
+          "brandNm": "피자는 여기",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 102691
+        },
+        {
+          "avrgSlsAmt": 942171,
+          "corpNm": "엘더블유지(주)",
+          "brandNm": "잭슨피자",
+          "frcsCnt": 35,
+          "arUnitAvrgSlsAmt": 49109
+        },
+        {
+          "avrgSlsAmt": 744965,
+          "corpNm": "디자인이유",
+          "brandNm": "이유피자&파스타(EU피자&파스타)",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 13303
+        },
+        {
+          "avrgSlsAmt": 743591,
+          "corpNm": "청오디피케이(주)",
+          "brandNm": "도미노피자",
+          "frcsCnt": 369,
+          "arUnitAvrgSlsAmt": 26727
+        },
+        {
+          "avrgSlsAmt": 708661,
+          "corpNm": "(주)서오릉에프앤비",
+          "brandNm": "서오릉피자",
+          "frcsCnt": 59,
+          "arUnitAvrgSlsAmt": 42941
+        },
+        {
+          "avrgSlsAmt": 692141,
+          "corpNm": "미친피자",
+          "brandNm": "미친피자",
+          "frcsCnt": 18,
+          "arUnitAvrgSlsAmt": 46142
+        },
+        {
+          "avrgSlsAmt": 652379,
+          "corpNm": "피자네버슬립스",
+          "brandNm": "피자네버슬립스",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 16872
+        },
+        {
+          "avrgSlsAmt": 611442,
+          "corpNm": "피자선생가맹사업본부",
+          "brandNm": "피자선생",
+          "frcsCnt": 22,
+          "arUnitAvrgSlsAmt": 47729
+        },
+        {
+          "avrgSlsAmt": 600690,
+          "corpNm": "위험한피자",
+          "brandNm": "위험한피자",
+          "frcsCnt": 6,
+          "arUnitAvrgSlsAmt": 56669
+        },
+        {
+          "avrgSlsAmt": 590202,
+          "corpNm": "한국파파존스(주)",
+          "brandNm": "파파존스피자",
+          "frcsCnt": 226,
+          "arUnitAvrgSlsAmt": 29968
+        }
+      ],
+      "외식-제과제빵": [
+        {
+          "avrgSlsAmt": 1645008,
+          "corpNm": "우즈(주)",
+          "brandNm": "WOO'Z",
+          "frcsCnt": 11,
+          "arUnitAvrgSlsAmt": 12031
+        },
+        {
+          "avrgSlsAmt": 1436760,
+          "corpNm": "(주)올드페리도넛",
+          "brandNm": "올드페리도넛",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 22449
+        },
+        {
+          "avrgSlsAmt": 1330514,
+          "corpNm": "(주)정미작소",
+          "brandNm": "윤쉐프 정직한제빵소",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 19007
+        },
+        {
+          "avrgSlsAmt": 1143506,
+          "corpNm": "(주)티에이",
+          "brandNm": "타타스베이글",
+          "frcsCnt": 20,
+          "arUnitAvrgSlsAmt": 19058
+        },
+        {
+          "avrgSlsAmt": 1125740,
+          "corpNm": "(주)플레이에프앤비",
+          "brandNm": "아우어베이커리(OUR Bakery)",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 19173
+        },
+        {
+          "avrgSlsAmt": 1051445,
+          "corpNm": "(주)삼송비엔씨(BNC)",
+          "brandNm": "삼송빵집",
+          "frcsCnt": 15,
+          "arUnitAvrgSlsAmt": 26455
+        },
+        {
+          "avrgSlsAmt": 890008,
+          "corpNm": "(주)라라브레드",
+          "brandNm": "라라브레드",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 10213
+        },
+        {
+          "avrgSlsAmt": 853628,
+          "corpNm": "빵쌤(주)",
+          "brandNm": "빵쌤(BBANGSSAEM)",
+          "frcsCnt": 10,
+          "arUnitAvrgSlsAmt": 6884
+        },
+        {
+          "avrgSlsAmt": 801765,
+          "corpNm": "(주)정담에프앤비",
+          "brandNm": "곤트란쉐리에(Gontran Cherrier)",
+          "frcsCnt": 14,
+          "arUnitAvrgSlsAmt": 13944
+        },
+        {
+          "avrgSlsAmt": 754741,
+          "corpNm": "(주)파리크라상",
+          "brandNm": "파리바게뜨",
+          "frcsCnt": 3419,
+          "arUnitAvrgSlsAmt": 27813
+        }
+      ],
+      "외식-패스트푸드": [
+        {
+          "avrgSlsAmt": 2688694,
+          "corpNm": "한국맥도날드(유)",
+          "brandNm": "맥도날드",
+          "frcsCnt": 83,
+          "arUnitAvrgSlsAmt": 23624
+        },
+        {
+          "avrgSlsAmt": 1216312,
+          "corpNm": "(주)비케이알",
+          "brandNm": "버거킹(Burger King)",
+          "frcsCnt": 125,
+          "arUnitAvrgSlsAmt": 17448
+        },
+        {
+          "avrgSlsAmt": 628868,
+          "corpNm": "(주)버거스올마이티",
+          "brandNm": "버거스올마이티",
+          "frcsCnt": 16,
+          "arUnitAvrgSlsAmt": 13903
+        },
+        {
+          "avrgSlsAmt": 561151,
+          "corpNm": "(주)신세계푸드",
+          "brandNm": "노브랜드 버거(No Brand Burger)",
+          "frcsCnt": 138,
+          "arUnitAvrgSlsAmt": 16122
+        },
+        {
+          "avrgSlsAmt": 492138,
+          "corpNm": "(주)맘스터치앤컴퍼니",
+          "brandNm": "맘스터치",
+          "frcsCnt": 1392,
+          "arUnitAvrgSlsAmt": 17456
+        },
+        {
+          "avrgSlsAmt": 475565,
+          "corpNm": "지티에스버거",
+          "brandNm": "GTS BURGER",
+          "frcsCnt": 12,
+          "arUnitAvrgSlsAmt": 23738
+        },
+        {
+          "avrgSlsAmt": 436649,
+          "corpNm": "(주)프랭크에프앤비",
+          "brandNm": "프랭크버거",
+          "frcsCnt": 461,
+          "arUnitAvrgSlsAmt": 30457
+        },
+        {
+          "avrgSlsAmt": 434182,
+          "corpNm": "(주)모스버거코리아",
+          "brandNm": "모스버거(MOSBURGER)",
+          "frcsCnt": 6,
+          "arUnitAvrgSlsAmt": 0
+        },
+        {
+          "avrgSlsAmt": 371466,
+          "corpNm": "라이징스타(주)",
+          "brandNm": "왓더버거",
+          "frcsCnt": 23,
+          "arUnitAvrgSlsAmt": 12515
+        },
+        {
+          "avrgSlsAmt": 351591,
+          "corpNm": "(주)씨엠월드에프앤씨",
+          "brandNm": "피제리아 나인로드",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 3880
+        }
+      ],
+      "외식-기타 외국식": [
+        {
+          "avrgSlsAmt": 2335384,
+          "corpNm": "(주)에스앤비",
+          "brandNm": "소백양",
+          "frcsCnt": 17,
+          "arUnitAvrgSlsAmt": 132000
+        },
+        {
+          "avrgSlsAmt": 2094685,
+          "corpNm": "(주)화담원",
+          "brandNm": "화담원",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 16757
+        },
+        {
+          "avrgSlsAmt": 1190000,
+          "corpNm": "능두네",
+          "brandNm": "능두네",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 29750
+        },
+        {
+          "avrgSlsAmt": 1115126,
+          "corpNm": "(주)유생촌푸드",
+          "brandNm": "유생촌",
+          "frcsCnt": 8,
+          "arUnitAvrgSlsAmt": 11738
+        },
+        {
+          "avrgSlsAmt": 973809,
+          "corpNm": "(주)타이이펙트",
+          "brandNm": "소이연남",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 22909
+        },
+        {
+          "avrgSlsAmt": 847905,
+          "corpNm": "(주)옥소반",
+          "brandNm": "옥소반",
+          "frcsCnt": 8,
+          "arUnitAvrgSlsAmt": 34259
+        },
+        {
+          "avrgSlsAmt": 801724,
+          "corpNm": "(주)늘솜",
+          "brandNm": "생어거스틴",
+          "frcsCnt": 19,
+          "arUnitAvrgSlsAmt": 12892
+        },
+        {
+          "avrgSlsAmt": 652190,
+          "corpNm": "(주)메콩타이컴퍼니",
+          "brandNm": "메콩타이",
+          "frcsCnt": 30,
+          "arUnitAvrgSlsAmt": 13689
+        },
+        {
+          "avrgSlsAmt": 648159,
+          "corpNm": "(주)에이원더블유",
+          "brandNm": "포레스트 오늘, 숲[soup]",
+          "frcsCnt": 9,
+          "arUnitAvrgSlsAmt": 19190
+        },
+        {
+          "avrgSlsAmt": 640005,
+          "corpNm": "(주)엠브이다이닝",
+          "brandNm": "번패티번",
+          "frcsCnt": 5,
+          "arUnitAvrgSlsAmt": 13221
+        }
+      ],
+      "외식-기타 외식": [
+        {
+          "avrgSlsAmt": 2715081,
+          "corpNm": "(주)행복한구이세상",
+          "brandNm": "연타발",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 17055
+        },
+        {
+          "avrgSlsAmt": 1666282,
+          "corpNm": "(주)메이크어딜리버리",
+          "brandNm": "메이크어딜리버리",
+          "frcsCnt": 29,
+          "arUnitAvrgSlsAmt": 65633
+        },
+        {
+          "avrgSlsAmt": 1481968,
+          "corpNm": "더에스지파트너스(주)",
+          "brandNm": "신도세기",
+          "frcsCnt": 11,
+          "arUnitAvrgSlsAmt": 19246
+        },
+        {
+          "avrgSlsAmt": 1331064,
+          "corpNm": "전원숯불갈비",
+          "brandNm": "전원숯불",
+          "frcsCnt": 22,
+          "arUnitAvrgSlsAmt": 9698
+        },
+        {
+          "avrgSlsAmt": 1319204,
+          "corpNm": "농장사람들(주)",
+          "brandNm": "농장사람들",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 18286
+        },
+        {
+          "avrgSlsAmt": 1314017,
+          "corpNm": "돌삼닭하남점",
+          "brandNm": "돌삼닭",
+          "frcsCnt": 1,
+          "arUnitAvrgSlsAmt": 15487
+        },
+        {
+          "avrgSlsAmt": 1262903,
+          "corpNm": "(주)엔제이컴퍼니",
+          "brandNm": "고굽남 고기굽는남자",
+          "frcsCnt": 20,
+          "arUnitAvrgSlsAmt": 19023
+        },
+        {
+          "avrgSlsAmt": 1227910,
+          "corpNm": "(주)야들야들한보약족발",
+          "brandNm": "야들야들한보약족발",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 36837
+        },
+        {
+          "avrgSlsAmt": 1136342,
+          "corpNm": "(주)깐깐한패밀리",
+          "brandNm": "깐깐한족발",
+          "frcsCnt": 30,
+          "arUnitAvrgSlsAmt": 29695
+        },
+        {
+          "avrgSlsAmt": 1100844,
+          "corpNm": "(주)문가네푸드",
+          "brandNm": "문가네정육식당",
+          "frcsCnt": 9,
+          "arUnitAvrgSlsAmt": 24738
+        }
+      ],
+      "외식-커피": [
+        {
+          "avrgSlsAmt": 1158718,
+          "corpNm": "(주)91컴퍼니",
+          "brandNm": "브런치빈",
+          "frcsCnt": 39,
+          "arUnitAvrgSlsAmt": 16251
+        },
+        {
+          "avrgSlsAmt": 1095689,
+          "corpNm": "(주)밀화당",
+          "brandNm": "밀화당",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 8891
+        },
+        {
+          "avrgSlsAmt": 741742,
+          "corpNm": "연두커피인터내셔날(주)",
+          "brandNm": "드립앤더치",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 52982
+        },
+        {
+          "avrgSlsAmt": 617354,
+          "corpNm": "(주)스컹크웍스코리아",
+          "brandNm": "스컹크웍스",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 8178
+        },
+        {
+          "avrgSlsAmt": 594295,
+          "corpNm": "(주)사실주의컴퍼니",
+          "brandNm": "모쿠816(Moku816)",
+          "frcsCnt": 8,
+          "arUnitAvrgSlsAmt": 37003
+        },
+        {
+          "avrgSlsAmt": 578720,
+          "corpNm": "에이피씨(주)",
+          "brandNm": "아필코(APILCO)",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 8942
+        },
+        {
+          "avrgSlsAmt": 557673,
+          "corpNm": "카페달링",
+          "brandNm": "카페달링",
+          "frcsCnt": 11,
+          "arUnitAvrgSlsAmt": 41825
+        },
+        {
+          "avrgSlsAmt": 429526,
+          "corpNm": "(주)하이테이블",
+          "brandNm": "하이테이블",
+          "frcsCnt": 10,
+          "arUnitAvrgSlsAmt": 7602
+        },
+        {
+          "avrgSlsAmt": 412722,
+          "corpNm": "커피퍽바이미스터케이",
+          "brandNm": "COFFEE PUCK",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 29065
+        },
+        {
+          "avrgSlsAmt": 408382,
+          "corpNm": "(주)카페온화",
+          "brandNm": "카페온화",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 6137
+        }
+      ],
+      "외식-음료 (커피 외)": [
+        {
+          "avrgSlsAmt": 455694,
+          "corpNm": "(주)홀릭코퍼레이션",
+          "brandNm": "과일에반하다.프루타",
+          "frcsCnt": 62,
+          "arUnitAvrgSlsAmt": 27794
+        },
+        {
+          "avrgSlsAmt": 422416,
+          "corpNm": "(주)파리크라상",
+          "brandNm": "잠바주스",
+          "frcsCnt": 8,
+          "arUnitAvrgSlsAmt": 28875
+        },
+        {
+          "avrgSlsAmt": 367178,
+          "corpNm": "읍천리382가맹본부",
+          "brandNm": "읍천리 382",
+          "frcsCnt": 135,
+          "arUnitAvrgSlsAmt": 13416
+        },
+        {
+          "avrgSlsAmt": 315231,
+          "corpNm": "(주)공차코리아",
+          "brandNm": "공차",
+          "frcsCnt": 793,
+          "arUnitAvrgSlsAmt": 16168
+        },
+        {
+          "avrgSlsAmt": 282393,
+          "corpNm": "(주)클로리스",
+          "brandNm": "클로리스(CHLORIS)",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 7431
+        },
+        {
+          "avrgSlsAmt": 273436,
+          "corpNm": "노란꼬무줄",
+          "brandNm": "노란꼬무줄",
+          "frcsCnt": 2,
+          "arUnitAvrgSlsAmt": 22008
+        },
+        {
+          "avrgSlsAmt": 264398,
+          "corpNm": "(주)레프트뱅크",
+          "brandNm": "레프트뱅크",
+          "frcsCnt": 11,
+          "arUnitAvrgSlsAmt": 26440
+        },
+        {
+          "avrgSlsAmt": 243130,
+          "corpNm": "㈜새힘컨설팅",
+          "brandNm": "세이프룻(Safe_Fruit)",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 20261
+        },
+        {
+          "avrgSlsAmt": 226381,
+          "corpNm": "(주)마이에프앤비",
+          "brandNm": "마이쥬스",
+          "frcsCnt": 7,
+          "arUnitAvrgSlsAmt": 10451
+        },
+        {
+          "avrgSlsAmt": 189915,
+          "corpNm": "(주)지에프앤비",
+          "brandNm": "페이브(fave)",
+          "frcsCnt": 15,
+          "arUnitAvrgSlsAmt": 5135
+        }
+      ],
+      "외식-아이스크림/빙수 ": [
+        {
+          "avrgSlsAmt": 638566,
+          "corpNm": "비알코리아(주)",
+          "brandNm": "배스킨라빈스",
+          "frcsCnt": 1653,
+          "arUnitAvrgSlsAmt": 31060
+        },
+        {
+          "avrgSlsAmt": 450837,
+          "corpNm": "(주)설빙",
+          "brandNm": "설빙",
+          "frcsCnt": 530,
+          "arUnitAvrgSlsAmt": 7915
+        },
+        {
+          "avrgSlsAmt": 264955,
+          "corpNm": "(주)더스노우랩",
+          "brandNm": "더스노우",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 24086
+        },
+        {
+          "avrgSlsAmt": 260020,
+          "corpNm": "(주)바오빙",
+          "brandNm": "바오빙",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 13221
+        },
+        {
+          "avrgSlsAmt": 234020,
+          "corpNm": "(주)브알라",
+          "brandNm": "브알라",
+          "frcsCnt": 16,
+          "arUnitAvrgSlsAmt": 9940
+        },
+        {
+          "avrgSlsAmt": 194397,
+          "corpNm": "(주)신세계푸드",
+          "brandNm": "오슬로(o'slo)",
+          "frcsCnt": 6,
+          "arUnitAvrgSlsAmt": 21336
+        },
+        {
+          "avrgSlsAmt": 186267,
+          "corpNm": "(주)아우온",
+          "brandNm": "간식창고",
+          "frcsCnt": 47,
+          "arUnitAvrgSlsAmt": 17625
+        },
+        {
+          "avrgSlsAmt": 178380,
+          "corpNm": "(주)이랜드이츠",
+          "brandNm": "페르케노",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 24324
+        },
+        {
+          "avrgSlsAmt": 151712,
+          "corpNm": "(주)빨라쪼",
+          "brandNm": "빨라쪼 델 프레도",
+          "frcsCnt": 12,
+          "arUnitAvrgSlsAmt": 47909
+        },
+        {
+          "avrgSlsAmt": 151135,
+          "corpNm": "솔리드웍스",
+          "brandNm": "솔리드웍스아이스크림",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 10961
+        }
+      ],
+      "도소매-편의점": [
+        {
+          "avrgSlsAmt": 136306586,
+          "corpNm": "(주)이마트24",
+          "brandNm": "이마트24 스마트(emart24 SMART)",
+          "frcsCnt": 135,
+          "arUnitAvrgSlsAmt": 13735095
+        },
+        {
+          "avrgSlsAmt": 639729,
+          "corpNm": "(주)지에스리테일",
+          "brandNm": "지에스25(GS25)",
+          "frcsCnt": 16337,
+          "arUnitAvrgSlsAmt": 28458
+        },
+        {
+          "avrgSlsAmt": 621795,
+          "corpNm": "(주)비지에프리테일",
+          "brandNm": "씨유(CU)",
+          "frcsCnt": 16615,
+          "arUnitAvrgSlsAmt": 31047
+        },
+        {
+          "avrgSlsAmt": 543661,
+          "corpNm": "롯데씨브이에스711(주)",
+          "brandNm": "미니스톱",
+          "frcsCnt": 1508,
+          "arUnitAvrgSlsAmt": 23563
+        },
+        {
+          "avrgSlsAmt": 489042,
+          "corpNm": "(주)코리아세븐",
+          "brandNm": "세븐일레븐",
+          "frcsCnt": 12553,
+          "arUnitAvrgSlsAmt": 25554
+        },
+        {
+          "avrgSlsAmt": 320128,
+          "corpNm": "(주)일화로지스",
+          "brandNm": "해빛(Have it)",
+          "frcsCnt": 45,
+          "arUnitAvrgSlsAmt": 17810
+        },
+        {
+          "avrgSlsAmt": 313911,
+          "corpNm": "(주)정석",
+          "brandNm": "알리바이",
+          "frcsCnt": 46,
+          "arUnitAvrgSlsAmt": 8813
+        },
+        {
+          "avrgSlsAmt": 245915,
+          "corpNm": "(주)하프타임",
+          "brandNm": "하프타임",
+          "frcsCnt": 38,
+          "arUnitAvrgSlsAmt": 12216
+        },
+        {
+          "avrgSlsAmt": 220533,
+          "corpNm": "미스터리테일",
+          "brandNm": "미스터마트",
+          "frcsCnt": 5,
+          "arUnitAvrgSlsAmt": 18076
+        },
+        {
+          "avrgSlsAmt": 186439,
+          "corpNm": "(주)아싸",
+          "brandNm": "아싸비어",
+          "frcsCnt": 58,
+          "arUnitAvrgSlsAmt": 8683
+        }
+      ],
+      "도소매-농수산물": [
+        {
+          "avrgSlsAmt": 720994,
+          "corpNm": "(주)자연의모든것",
+          "brandNm": "총각네야채가게",
+          "frcsCnt": 50,
+          "arUnitAvrgSlsAmt": 60911
+        },
+        {
+          "avrgSlsAmt": 568417,
+          "corpNm": "㈜광이네",
+          "brandNm": "광이네과일가게",
+          "frcsCnt": 11,
+          "arUnitAvrgSlsAmt": 51094
+        },
+        {
+          "avrgSlsAmt": 486975,
+          "corpNm": "(주)월배농산푸드",
+          "brandNm": "아지야과일가게",
+          "frcsCnt": 21,
+          "arUnitAvrgSlsAmt": 46730
+        },
+        {
+          "avrgSlsAmt": 383597,
+          "corpNm": "다름달음과일",
+          "brandNm": "다름과일",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 34213
+        },
+        {
+          "avrgSlsAmt": 361656,
+          "corpNm": "(주)로즈애플",
+          "brandNm": "로즈애플(ROSE APPLE)",
+          "frcsCnt": 15,
+          "arUnitAvrgSlsAmt": 23883
+        },
+        {
+          "avrgSlsAmt": 292826,
+          "corpNm": "(주)풀",
+          "brandNm": "비타민 팡팡",
+          "frcsCnt": 3,
+          "arUnitAvrgSlsAmt": 34413
+        },
+        {
+          "avrgSlsAmt": 208368,
+          "corpNm": "(주)다음",
+          "brandNm": "화월청과",
+          "frcsCnt": 20,
+          "arUnitAvrgSlsAmt": 16795
+        },
+        {
+          "avrgSlsAmt": 192914,
+          "corpNm": "(주)이두부야",
+          "brandNm": "바닷물만난콩이:두부야",
+          "frcsCnt": 93,
+          "arUnitAvrgSlsAmt": 15572
+        },
+        {
+          "avrgSlsAmt": 166689,
+          "corpNm": "플레르망고",
+          "brandNm": "플레르망고",
+          "frcsCnt": 4,
+          "arUnitAvrgSlsAmt": 8929
+        },
+        {
+          "avrgSlsAmt": 159342,
+          "corpNm": "에코한마음(주)",
+          "brandNm": "에코한마음",
+          "frcsCnt": 38,
+          "arUnitAvrgSlsAmt": 13473
+        }
+      ]
+    },
+    "analysis_date": "2024-11-29",
+    "total_target_count": 9073
+  }
