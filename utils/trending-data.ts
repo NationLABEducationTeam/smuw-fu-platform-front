@@ -70,10 +70,10 @@ async function fetchS3Data(period: string): Promise<TrendingDataItem[]> {
   
     try {
       // console.log('AWS Credentials:', {
-        region: process.env.AWS_REGION,
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID?.substring(0, 5) + '...',
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ? 'exists' : 'missing'
-      });
+      //   region: process.env.AWS_REGION,
+      //   accessKeyId: process.env.AWS_ACCESS_KEY_ID?.substring(0, 5) + '...',
+      //   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ? 'exists' : 'missing'
+      // });
   
       const results = await Promise.all(
         Object.keys(periodMap).map(async (period) => {

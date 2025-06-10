@@ -91,10 +91,10 @@ export async function fetchFromAPI<T>(endpoint: string, body: any = {}): Promise
     }
 
     // console.log(`API Call to ${endpoint}:`, {
-      status: response.status,
-      statusText: response.statusText,
-      headers: Object.fromEntries(response.headers.entries()),
-    });
+    //   status: response.status,
+    //   statusText: response.statusText,
+    //   headers: Object.fromEntries(response.headers.entries()),
+    // });
 
     const data = await response.json();
     return data as T;
@@ -288,9 +288,9 @@ export async function fetchFromAPIWithAuth<T>(endpoint: string, body: any = {}):
     
     // 토큰 정보를 상세히 로깅
     // console.log('인증 토큰 상태:', {
-      success: tokenResult.success,
-      hasToken: !!tokenResult.token
-    });
+    //   success: tokenResult.success,
+    //   hasToken: !!tokenResult.token
+    // });
     
     const normalizedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
     const url = `${API_BASE_URL}${normalizedEndpoint}`;

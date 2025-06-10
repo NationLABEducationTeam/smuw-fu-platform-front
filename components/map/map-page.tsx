@@ -752,10 +752,10 @@ export function MapPage() {
     // 현재 오버레이를, 새로운 데이터 옵션으로 업데이트
     if (selectedLocation && districtData) {
       // console.log('오버레이 업데이트 시작:', { 
-        location: selectedLocation, 
-        option: option,
-        data: districtData 
-      });
+      //   location: selectedLocation, 
+      //   option: option,
+      //   data: districtData 
+      // });
       
       // 기존 오버레이 제거
       currentOverlaysRef.current.forEach(overlay => {
