@@ -43,7 +43,7 @@ export async function fetchFromAPIGateway<T>(endpoint: string, params: any = {})
     const districtCode = Object.keys(params)[0];
     const url = `${API_BASE_URL}${normalizedEndpoint}?${districtCode}`;
     
-    console.log('Requesting URL (public):', url);
+    // console.log('Requesting URL (public):', url);
 
     const response = await fetch(url, {
       method: 'GET',
@@ -75,7 +75,7 @@ export async function fetchFromAPI<T>(endpoint: string, body: any = {}): Promise
     const normalizedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
     const url = `${API_BASE_URL}${normalizedEndpoint}`;
     
-    console.log('Requesting URL (public):', url);
+    // console.log('Requesting URL (public):', url);
 
     const response = await fetch(url, {
       method: 'POST',
@@ -90,7 +90,7 @@ export async function fetchFromAPI<T>(endpoint: string, body: any = {}): Promise
       throw new Error(`API request failed: ${response.statusText}`);
     }
 
-    console.log(`API Call to ${endpoint}:`, {
+    // console.log(`API Call to ${endpoint}:`, {
       status: response.status,
       statusText: response.statusText,
       headers: Object.fromEntries(response.headers.entries()),
@@ -119,7 +119,7 @@ export async function fetchFromFastAPI<T>(endpoint: string, params: any = {}): P
     const queryParams = new URLSearchParams(params).toString();
     url = `${url}${queryParams ? `?${queryParams}` : ''}`;
     
-    console.log(`Calling FastAPI: ${url}`);
+    // console.log(`Calling FastAPI: ${url}`);
     
     const response = await fetch(url, {
       method: 'GET',
@@ -134,7 +134,7 @@ export async function fetchFromFastAPI<T>(endpoint: string, params: any = {}): P
     }
 
     const data = await response.json();
-    console.log('FastAPI response data:', data);
+    // console.log('FastAPI response data:', data);
     return data as T;
   } catch (error) {
     console.error('FastAPI call failed:', error);
@@ -223,7 +223,7 @@ export async function fetchFromAPIGatewayWithAuth<T>(endpoint: string, params: a
     
     const url = `${API_BASE_URL}${normalizedEndpoint}${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
     
-    console.log('Requesting URL with Auth:', url);
+    // console.log('Requesting URL with Auth:', url);
 
     const response = await fetch(url, {
       method: 'GET',
@@ -255,11 +255,11 @@ async function autoLogin(): Promise<{token?: string, success: boolean}> {
     const username = 'testuser';  
     const password = 'Test1234!'; 
     
-    console.log('자동 로그인 시도 중...');
+    // console.log('자동 로그인 시도 중...');
     const result = await signIn(username, password);
     
     if (result.success && result.idToken) {
-      console.log('자동 로그인 성공');
+      // console.log('자동 로그인 성공');
       return { 
         token: result.idToken,
         success: true 
@@ -282,12 +282,12 @@ export async function fetchFromAPIWithAuth<T>(endpoint: string, body: any = {}):
     
     // 토큰이 없으면 자동 로그인 시도
     if (!tokenResult.success || !tokenResult.token) {
-      console.log('토큰이 없거나 유효하지 않음, 자동 로그인 시도');
+      // console.log('토큰이 없거나 유효하지 않음, 자동 로그인 시도');
       tokenResult = await autoLogin();
     }
     
     // 토큰 정보를 상세히 로깅
-    console.log('인증 토큰 상태:', {
+    // console.log('인증 토큰 상태:', {
       success: tokenResult.success,
       hasToken: !!tokenResult.token
     });
@@ -307,8 +307,8 @@ export async function fetchFromAPIWithAuth<T>(endpoint: string, body: any = {}):
       throw new Error('인증 토큰을 가져올 수 없습니다. API 호출 불가');
     }
     
-    console.log('Requesting URL with Auth:', url);
-    console.log('Request Body:', body);
+    // console.log('Requesting URL with Auth:', url);
+    // console.log('Request Body:', body);
 
     const response = await fetch(url, {
       method: 'POST',

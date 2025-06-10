@@ -52,14 +52,14 @@ export default function Page() {
 
   // 채팅 응답 처리 함수들을 정의
   const handleChatResponse = useCallback((data: any) => {
-    console.log('채팅 응답 수신:', data)
+    // console.log('채팅 응답 수신:', data)
     setMessages(prev => [...prev, { role: 'assistant', content: data.message }])
     setIsLoading(false)
     scrollToBottom()
   }, [scrollToBottom])
 
   const handleChatStream = useCallback((data: any) => {
-    console.log('스트리밍 메시지 수신:', data)
+    // console.log('스트리밍 메시지 수신:', data)
     setStreamingMessage(prevMessage => {
       // 이전 메시지가 없으면 새 메시지를 그대로 반환
       if (prevMessage === null) return data.message;
@@ -69,7 +69,7 @@ export default function Page() {
   }, [])
 
   const handleChatStreamEnd = useCallback((data: any) => {
-    console.log('스트리밍 종료 메시지 수신:', data)
+    // console.log('스트리밍 종료 메시지 수신:', data)
     setMessages(prev => {
       const updatedMessages = [...prev, { role: 'assistant' as const, content: data.message }]
       
@@ -119,7 +119,7 @@ export default function Page() {
 
   // WebSocket 초기화 함수
   const initializeWebSocket = useCallback(() => {
-    console.log('WebSocket 초기화 시작')
+    // console.log('WebSocket 초기화 시작')
     setConnectionStatus('connecting')
     
     const chatService = getChatService(WEBSOCKET_CONFIG.URL)
@@ -127,7 +127,7 @@ export default function Page() {
     
     // 이벤트 핸들러 등록
     chatService.onOpen(() => {
-      console.log('WebSocket 연결됨')
+      // console.log('WebSocket 연결됨')
       setConnectionError(false)
       setConnectionStatus('connected')
       
@@ -138,13 +138,13 @@ export default function Page() {
       
       // 30초마다 ping 메시지 전송
       pingIntervalRef.current = setInterval(() => {
-        console.log('Ping 메시지 전송')
+        // console.log('Ping 메시지 전송')
         chatService.sendPing()
       }, 30000) // 30초 간격
     })
     
     chatService.onClose(() => {
-      console.log('WebSocket 연결 종료됨')
+      // console.log('WebSocket 연결 종료됨')
       setConnectionStatus('disconnected')
       
       // ping 메시지 전송 중지
@@ -172,7 +172,7 @@ export default function Page() {
     chatService.onMessage(WebSocketMessageType.CHAT_STREAM_END, handleChatStreamEnd)
     chatService.onMessage(WebSocketMessageType.ERROR, handleErrorResponse)
     chatService.onMessage(WebSocketMessageType.PONG, () => {
-      console.log('Pong 메시지 수신')
+      // console.log('Pong 메시지 수신')
     })
     
     // 연결 시작
@@ -258,14 +258,14 @@ export default function Page() {
     
     // WebSocket 연결 확인
     if (!chatServiceRef.current) {
-      console.log('WebSocket 연결 시작')
+      // console.log('WebSocket 연결 시작')
       initializeWebSocket()
     }
     
     // 메시지 전송
     const chatService = chatServiceRef.current as any
     if (chatService) {
-      console.log('메시지 전송:', userMessage)
+      // console.log('메시지 전송:', userMessage)
       
       const request = {
         message: userMessage,
@@ -283,11 +283,11 @@ export default function Page() {
 
   // 연결 재시도 함수
   const handleReconnect = useCallback(() => {
-    console.log('WebSocket 연결 재시도 중...')
+    // console.log('WebSocket 연결 재시도 중...')
     
     // 이미 연결 중이면 무시
     if (connectionStatus === 'connecting') {
-      console.log('이미 연결 중입니다.')
+      // console.log('이미 연결 중입니다.')
       return
     }
     

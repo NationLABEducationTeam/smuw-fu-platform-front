@@ -44,17 +44,17 @@ export async function fetchMoneyData(administrativeCode: string): Promise<MoneyD
 
 export async function fetchSalesData(administrativeCode: string): Promise<SalesData | null> {
   if (!administrativeCode.startsWith('11')) {
-    console.log('Not a Seoul district code:', administrativeCode);
+    // console.log('Not a Seoul district code:', administrativeCode);
     return null;
   }
 
   try {
     const districtCode = administrativeCode.slice(0, -2);
-    console.log('Fetching sales data for district:', districtCode);
+    // console.log('Fetching sales data for district:', districtCode);
     
     // Lambda Function URL로 직접 GET 요청
     const url = `https://6y6ivlkbrr75pnjdkdototgqty0mfiuf.lambda-url.ap-northeast-2.on.aws/?${districtCode}=`;
-    console.log('Requesting URL:', url);
+    // console.log('Requesting URL:', url);
 
     const response = await fetch(url, {
       method: 'GET',
@@ -68,10 +68,10 @@ export async function fetchSalesData(administrativeCode: string): Promise<SalesD
     }
 
     const data = await response.json();
-    console.log('Received sales data:', data);
+    // console.log('Received sales data:', data);
     
     if (!data || !data.industries || Object.keys(data.industries).length === 0) {
-      console.log('No sales data available for district:', districtCode);
+      // console.log('No sales data available for district:', districtCode);
       return null;
     }
 

@@ -41,7 +41,7 @@ export function LoginForm({ onSuccess }: LoginFormProps) {
         setCognitoUser(result.user)
       } else if (result.success) {
         // 로그인 성공
-        console.log('로그인 성공:', result);
+        // console.log('로그인 성공:', result);
         
         // 사용자 속성에서 name을 가져와 username으로 사용
         const userAttributes = result.user?.getUserAttributes ? await new Promise<Record<string, string>>((resolve) => {
@@ -105,7 +105,7 @@ export function LoginForm({ onSuccess }: LoginFormProps) {
       
       if (result.success) {
         // 새 비밀번호 설정 성공
-        console.log('새 비밀번호 설정 성공:', result)
+        // console.log('새 비밀번호 설정 성공:', result)
         if (onSuccess) {
           onSuccess()
         }

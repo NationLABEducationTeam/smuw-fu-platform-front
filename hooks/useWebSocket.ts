@@ -50,24 +50,24 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
   const connect = useCallback(() => {
     // 이미 연결되어 있거나 최대 재연결 시도 횟수에 도달한 경우 재연결 시도하지 않음
     if (webSocketRef.current?.readyState === WebSocket.OPEN) {
-      console.log('WebSocket 이미 연결되어 있음');
+      // console.log('WebSocket 이미 연결되어 있음');
       return;
     }
 
     if (maxReconnectReachedRef.current) {
-      console.log('최대 재연결 시도 횟수에 도달함. 수동 재연결이 필요합니다.');
+      // console.log('최대 재연결 시도 횟수에 도달함. 수동 재연결이 필요합니다.');
       return;
     }
 
     // 연결 중인 경우 중복 연결 방지
     if (webSocketRef.current?.readyState === WebSocket.CONNECTING) {
-      console.log('WebSocket 연결 중... 중복 연결 시도 방지');
+      // console.log('WebSocket 연결 중... 중복 연결 시도 방지');
       return;
     }
 
     // 기존 연결 정리
     if (webSocketRef.current) {
-      console.log(`기존 WebSocket 연결 종료 (상태: ${getWebSocketStateDescription(webSocketRef.current.readyState)})`);
+      // console.log(`기존 WebSocket 연결 종료 (상태: ${getWebSocketStateDescription(webSocketRef.current.readyState)})`);
       webSocketRef.current.close();
       webSocketRef.current = null;
     }
@@ -76,25 +76,25 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
       // 연결 시도 시간 기록
       connectionAttemptTimeRef.current = Date.now();
       
-      console.log(`WebSocket 연결 시도 (${reconnectCount + 1}/${reconnectAttempts}): ${url}`);
+      // console.log(`WebSocket 연결 시도 (${reconnectCount + 1}/${reconnectAttempts}): ${url}`);
       const ws = new WebSocket(url);
       webSocketRef.current = ws;
 
       // 연결 타임아웃 설정 (10초)
       const connectionTimeoutId = setTimeout(() => {
         if (ws.readyState !== WebSocket.OPEN) {
-          console.log('WebSocket 연결 타임아웃 (10초)');
+          // console.log('WebSocket 연결 타임아웃 (10초)');
           ws.close();
           
           // 재연결 로직 트리거
           if (reconnectCount < reconnectAttempts - 1) {
-            console.log(`연결 타임아웃으로 인한 재연결 시도 ${reconnectCount + 1}/${reconnectAttempts}`);
+            // console.log(`연결 타임아웃으로 인한 재연결 시도 ${reconnectCount + 1}/${reconnectAttempts}`);
             setReconnectCount(prev => prev + 1);
             reconnectTimeoutRef.current = setTimeout(() => {
               connect();
             }, reconnectInterval);
           } else {
-            console.log('최대 재연결 시도 횟수 초과 (타임아웃)');
+            // console.log('최대 재연결 시도 횟수 초과 (타임아웃)');
             maxReconnectReachedRef.current = true;
           }
         }
@@ -109,7 +109,7 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
           ? Date.now() - connectionAttemptTimeRef.current 
           : 'unknown';
         
-        console.log(`WebSocket 연결 성공 (소요 시간: ${connectionTime}ms)`);
+        // console.log(`WebSocket 연결 성공 (소요 시간: ${connectionTime}ms)`);
         setIsConnected(true);
         setReconnectCount(0);
         hasErrorRef.current = false;
@@ -121,7 +121,7 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
         // 타임아웃 제거
         clearTimeout(connectionTimeoutId);
         
-        console.log(`WebSocket 연결 종료: 코드=${event.code}, 이유=${event.reason || '없음'}`);
+        // console.log(`WebSocket 연결 종료: 코드=${event.code}, 이유=${event.reason || '없음'}`);
         setIsConnected(false);
         onClose?.();
 
@@ -130,16 +130,16 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
         
         // 에러가 발생하지 않았고, 정상 종료가 아니며, 재연결 시도 횟수가 제한 이내인 경우에만 재연결 시도
         if (!hasErrorRef.current && !isNormalClosure && reconnectCount < reconnectAttempts - 1) {
-          console.log(`재연결 시도 ${reconnectCount + 1}/${reconnectAttempts} (${reconnectInterval}ms 후)`);
+          // console.log(`재연결 시도 ${reconnectCount + 1}/${reconnectAttempts} (${reconnectInterval}ms 후)`);
           reconnectTimeoutRef.current = setTimeout(() => {
             setReconnectCount(prev => prev + 1);
             connect();
           }, reconnectInterval);
         } else if (reconnectCount >= reconnectAttempts - 1) {
-          console.log('최대 재연결 시도 횟수 초과. 더 이상 재연결을 시도하지 않습니다.');
+          // console.log('최대 재연결 시도 횟수 초과. 더 이상 재연결을 시도하지 않습니다.');
           maxReconnectReachedRef.current = true;
         } else if (isNormalClosure) {
-          console.log('정상적인 연결 종료로 재연결을 시도하지 않습니다.');
+          // console.log('정상적인 연결 종료로 재연결을 시도하지 않습니다.');
         }
       };
 
@@ -150,7 +150,7 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
           onMessage?.(parsedData);
         } catch (error) {
           console.error('WebSocket 메시지 파싱 오류:', error);
-          console.log('원본 메시지:', event.data);
+          // console.log('원본 메시지:', event.data);
           setLastMessage(event.data);
           onMessage?.(event.data);
         }
@@ -161,12 +161,12 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
         hasErrorRef.current = true;
         
         // 브라우저 콘솔에 더 자세한 정보 출력
-        console.log('WebSocket 상태:', getWebSocketStateDescription(ws.readyState));
-        console.log('WebSocket URL:', url);
+        // console.log('WebSocket 상태:', getWebSocketStateDescription(ws.readyState));
+        // console.log('WebSocket URL:', url);
         
         // 에러 발생 시 재연결 시도 횟수를 증가시키고, 최대 시도 횟수에 도달했는지 확인
         if (reconnectCount >= reconnectAttempts - 1) {
-          console.log('에러 발생 후 최대 재연결 시도 횟수 초과');
+          // console.log('에러 발생 후 최대 재연결 시도 횟수 초과');
           maxReconnectReachedRef.current = true;
         }
         
@@ -178,11 +178,11 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
       
       // 에러 발생 시 재연결 시도 횟수를 증가시키고, 최대 시도 횟수에 도달했는지 확인
       if (reconnectCount >= reconnectAttempts - 1) {
-        console.log('연결 시도 중 에러 발생 후 최대 재연결 시도 횟수 초과');
+        // console.log('연결 시도 중 에러 발생 후 최대 재연결 시도 횟수 초과');
         maxReconnectReachedRef.current = true;
       } else {
         // 재연결 시도
-        console.log(`연결 오류로 인한 재연결 시도 ${reconnectCount + 1}/${reconnectAttempts} (${reconnectInterval}ms 후)`);
+        // console.log(`연결 오류로 인한 재연결 시도 ${reconnectCount + 1}/${reconnectAttempts} (${reconnectInterval}ms 후)`);
         reconnectTimeoutRef.current = setTimeout(() => {
           setReconnectCount(prev => prev + 1);
           connect();
@@ -198,7 +198,7 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
     }
 
     if (webSocketRef.current) {
-      console.log(`WebSocket 연결 종료 요청 (상태: ${getWebSocketStateDescription(webSocketRef.current.readyState)})`);
+      // console.log(`WebSocket 연결 종료 요청 (상태: ${getWebSocketStateDescription(webSocketRef.current.readyState)})`);
       webSocketRef.current.close();
       webSocketRef.current = null;
     }
@@ -212,7 +212,7 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
 
   // 수동으로 재연결을 시도하는 함수 추가
   const resetAndConnect = useCallback(() => {
-    console.log('WebSocket 연결 수동 재설정 및 재연결 시도');
+    // console.log('WebSocket 연결 수동 재설정 및 재연결 시도');
     disconnect();
     setReconnectCount(0);
     hasErrorRef.current = false;
@@ -250,7 +250,7 @@ export function useWebSocket(url: string, options: UseWebSocketOptions = {}) {
   // 네트워크 상태 변경 감지
   useEffect(() => {
     const handleOnline = () => {
-      console.log('네트워크 연결됨. WebSocket 재연결 시도...');
+      // console.log('네트워크 연결됨. WebSocket 재연결 시도...');
       if (!isConnected && !maxReconnectReachedRef.current) {
         resetAndConnect();
       }

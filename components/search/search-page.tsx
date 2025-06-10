@@ -531,7 +531,7 @@ export function SearchPage() {
         duration 
       });
 
-      console.log('API Response:', trendData);
+      // console.log('API Response:', trendData);
 
       setSearchStates(prev => prev.map(state => 
         state.keyword === keyword 

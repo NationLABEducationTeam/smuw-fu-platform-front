@@ -22,7 +22,7 @@ class ChatService {
 
   async connect() {
     if (this.isConnected || this.isConnecting) {
-      console.log('WebSocket is already connected or connecting');
+      // console.log('WebSocket is already connected or connecting');
       return;
     }
 
@@ -32,11 +32,11 @@ class ChatService {
       // 인증된 WebSocket URL 가져오기
       this.url = await getAuthenticatedWebSocketUrl(this.baseUrl);
       
-      console.log(`Connecting to WebSocket: ${this.url}`);
+      // console.log(`Connecting to WebSocket: ${this.url}`);
       this.socket = new WebSocket(this.url);
 
       this.socket.onopen = (event) => {
-        console.log('WebSocket connected');
+        // console.log('WebSocket connected');
         this.isConnected = true;
         this.isConnecting = false;
         this.reconnectAttempts = 0;
@@ -45,7 +45,7 @@ class ChatService {
       };
 
       this.socket.onclose = (event) => {
-        console.log('WebSocket disconnected', event);
+        // console.log('WebSocket disconnected', event);
         this.isConnected = false;
         this.isConnecting = false;
         this.stopPingInterval();
@@ -63,7 +63,7 @@ class ChatService {
           const message = JSON.parse(event.data);
           const { type, data } = message;
           
-          console.log(`Received message of type: ${type}`);
+          // console.log(`Received message of type: ${type}`);
           
           if (this.messageHandlers[type]) {
             this.messageHandlers[type].forEach(handler => handler(data));
@@ -81,12 +81,12 @@ class ChatService {
 
   attemptReconnect() {
     if (this.reconnectAttempts >= this.maxReconnectAttempts) {
-      console.log('최대 재연결 시도 횟수에 도달했습니다.');
+      // console.log('최대 재연결 시도 횟수에 도달했습니다.');
       return;
     }
 
     this.reconnectAttempts++;
-    console.log(`WebSocket 재연결 시도 ${this.reconnectAttempts}/${this.maxReconnectAttempts}`);
+    // console.log(`WebSocket 재연결 시도 ${this.reconnectAttempts}/${this.maxReconnectAttempts}`);
     
     setTimeout(() => {
       this.connect();
@@ -99,7 +99,7 @@ class ChatService {
     }
     this.isConnected = false;
     this.stopPingInterval();
-    console.log('WebSocket 연결이 종료되었습니다.');
+    // console.log('WebSocket 연결이 종료되었습니다.');
   }
 
   startPingInterval() {

@@ -296,7 +296,7 @@ export function MapPage() {
   const createDistrictOverlay = useCallback((position: any, text: string, data?: any) => {
     if (!mapRef.current) return null;
     
-    console.log('오버레이 생성 시작 - 원본 데이터:', data);
+    // console.log('오버레이 생성 시작 - 원본 데이터:', data);
     
     // API 응답 데이터 구조 확인 및 처리
     let processedData: any = null;
@@ -306,12 +306,12 @@ export function MapPage() {
       try {
         // body가 문자열인 경우 파싱
         const bodyData = typeof data.body === 'string' ? JSON.parse(data.body) : data.body;
-        console.log('bodyData 확인:', bodyData);
+        // console.log('bodyData 확인:', bodyData);
         
         // result 배열이 있는지 확인
         if (bodyData?.result && Array.isArray(bodyData.result) && bodyData.result.length > 0) {
           processedData = bodyData.result[0];
-          console.log('추출된 데이터:', processedData);
+          // console.log('추출된 데이터:', processedData);
         } else {
           processedData = bodyData;
         }
@@ -321,13 +321,13 @@ export function MapPage() {
     } else if (data?.result && Array.isArray(data.result) && data.result.length > 0) {
       // 이미 파싱된 데이터에서 result 배열이 있는 경우
       processedData = data.result[0];
-      console.log('이미 파싱된 데이터에서 추출:', processedData);
+      // console.log('이미 파싱된 데이터에서 추출:', processedData);
     } else {
       // 그 외의 경우 원본 데이터 사용
       processedData = data;
     }
     
-    console.log('최종 처리된 데이터:', processedData);
+    // console.log('최종 처리된 데이터:', processedData);
     
     const content = document.createElement('div');
     content.className = 'district-overlay';
@@ -341,7 +341,7 @@ export function MapPage() {
       const keyStr = selectedDataOption.key.toString();
       let value = processedData[keyStr];
       
-      console.log(`데이터 검색 중: 키=${keyStr}, 값=${value}`);
+      // console.log(`데이터 검색 중: 키=${keyStr}, 값=${value}`);
       
       if (value !== undefined && value !== null && value !== 'N/A') {
         // 문자열을 숫자로 변환 시도
@@ -416,14 +416,14 @@ export function MapPage() {
   // 지역 정보 가져오기 (API 응답 구조에 맞게 수정)
   const fetchDistrictInfo = async (populationCode: string) => {
     try {
-      console.log(`동 정보 요청: ${populationCode}`);
+      // console.log(`동 정보 요청: ${populationCode}`);
       
       // adm_cd 파라미터로 API 호출
       const response = await fetchFromAPI<any>(API_ENDPOINTS.DONGINFO, { 
         adm_cd: populationCode 
       });
       
-      console.log('동 정보 응답 원본:', response);
+      // console.log('동 정보 응답 원본:', response);
       
       return response; // 원본 응답 그대로 반환
     } catch (error) {
@@ -441,7 +441,7 @@ export function MapPage() {
       const locationData = await handleLocationSearchSelect(result);
       
       // 최소한의 로깅만 남기고 순환 참조 방지
-      console.log(`선택된 위치: ${locationData.name} (${locationData.administrative_code})`);
+      // console.log(`선택된 위치: ${locationData.name} (${locationData.administrative_code})`);
       
       setSelectedLocation(locationData);
 
@@ -457,7 +457,7 @@ export function MapPage() {
       const geoJSON: GeoJSONResponse = await geoJSONResponse.json();
 
       // 최소한의 로깅으로 변경 (순환 참조 방지)
-      console.log(`GeoJSON 데이터 로드: ${geoJSON?.features?.length || 0}개 요소`);
+      // console.log(`GeoJSON 데이터 로드: ${geoJSON?.features?.length || 0}개 요소`);
 
       if (geoJSON?.features?.[0]) {
         const { coordinates, type } = geoJSON.features[0].geometry;
@@ -504,13 +504,13 @@ export function MapPage() {
       
       // 추가: 행정동이 선택되면 바로 분석 데이터 가져오기
       try {
-        console.log('행정동 선택 후 자동 분석 데이터 로드 시작:', locationData.administrative_code);
+        // console.log('행정동 선택 후 자동 분석 데이터 로드 시작:', locationData.administrative_code);
         
         // Lambda URL에서 데이터 가져오기
         const salesData = await fetchSalesData(locationData.administrative_code);
         
         if (salesData) {
-          console.log('자동 로드된 분석 데이터:', salesData);
+          // console.log('자동 로드된 분석 데이터:', salesData);
           setSalesData(salesData);
           
           // 분석 패널 자동으로 열기 (펼친 상태로)
@@ -550,7 +550,7 @@ export function MapPage() {
       const adminCode = selectedLocation.administrative_code;
       const key = adminCode.substring(0, 8);
 
-      console.log(`음식점 데이터 요청: 지역코드 ${key}, 카테고리 ${selectedCategory}`);
+      // console.log(`음식점 데이터 요청: 지역코드 ${key}, 카테고리 ${selectedCategory}`);
 
       const response = await fetchFromAPI<any>(
         API_ENDPOINTS.STORE,
@@ -560,7 +560,7 @@ export function MapPage() {
         }
       );
 
-      console.log('API 응답:', response);
+      // console.log('API 응답:', response);
 
       // 지도의 기존 마커 제거
       if (clustererRef.current) {
@@ -576,7 +576,7 @@ export function MapPage() {
         if (typeof response.body === 'string') {
           try {
             const bodyData = JSON.parse(response.body);
-            console.log('파싱된 body 데이터:', bodyData);
+            // console.log('파싱된 body 데이터:', bodyData);
             items = bodyData.items || [];
           } catch (error) {
             console.error('body 파싱 오류:', error);
@@ -596,10 +596,10 @@ export function MapPage() {
         items = response;
       }
       
-      console.log('처리된 음식점 데이터:', items);
+      // console.log('처리된 음식점 데이터:', items);
       
       if (items.length > 0) {
-        console.log(`${items.length}개의 음식점 데이터 로드됨`);
+        // console.log(`${items.length}개의 음식점 데이터 로드됨`);
         
         // 마커 생성 및 추가
         const markers = items.map((item: Restaurant | any) => {
@@ -631,7 +631,7 @@ export function MapPage() {
         // 클러스터러에 마커 추가
         if (clustererRef.current && markers.length > 0) {
           clustererRef.current.addMarkers(markers);
-          console.log(`${markers.length}개의 마커가 지도에 추가됨`);
+          // console.log(`${markers.length}개의 마커가 지도에 추가됨`);
           
           // 지도 영역 조정
           const bounds = new window.kakao.maps.LatLngBounds();
@@ -667,7 +667,7 @@ export function MapPage() {
       const data = await fetchSalesData(selectedLocation.administrative_code);
       
       if (data) {
-        console.log('Lambda URL 데이터 수신됨:', data);
+        // console.log('Lambda URL 데이터 수신됨:', data);
         setSalesData(data);
         setIsAnalysisPanelOpen(true);
         setIsAnalysisPanelCollapsed(false); // 패널을 펼친 상태로 설정
@@ -746,12 +746,12 @@ export function MapPage() {
 
   // 데이터 옵션 변경 핸들러 개선
   const handleDataOptionChange = useCallback((option: DistrictDataOption) => {
-    console.log('데이터 옵션 변경:', option);
+    // console.log('데이터 옵션 변경:', option);
     setSelectedDataOption(option);
     
     // 현재 오버레이를, 새로운 데이터 옵션으로 업데이트
     if (selectedLocation && districtData) {
-      console.log('오버레이 업데이트 시작:', { 
+      // console.log('오버레이 업데이트 시작:', { 
         location: selectedLocation, 
         option: option,
         data: districtData 

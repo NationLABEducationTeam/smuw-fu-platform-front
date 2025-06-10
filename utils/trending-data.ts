@@ -45,10 +45,10 @@ async function fetchS3Data(period: string): Promise<TrendingDataItem[]> {
     });
   
       const response = await s3Client.send(command);
-      console.log(`Successfully received response from S3 for ${period}`);
+      // console.log(`Successfully received response from S3 for ${period}`);
       
       const str = await response.Body?.transformToString();
-      console.log(`Data for ${period}:`, str);
+      // console.log(`Data for ${period}:`, str);
       
       return str ? JSON.parse(str) : [];
     } catch (error) {
@@ -59,7 +59,7 @@ async function fetchS3Data(period: string): Promise<TrendingDataItem[]> {
   
   // 모든 기간의 데이터 가져오기
   export async function fetchTrendData(): Promise<TrendData> {
-    console.log('Starting to fetch trend data...');
+    // console.log('Starting to fetch trend data...');
     
     const periodMap = {
       'daily': 'yesterdayData',
@@ -69,7 +69,7 @@ async function fetchS3Data(period: string): Promise<TrendingDataItem[]> {
     } as const;
   
     try {
-      console.log('AWS Credentials:', {
+      // console.log('AWS Credentials:', {
         region: process.env.AWS_REGION,
         accessKeyId: process.env.AWS_ACCESS_KEY_ID?.substring(0, 5) + '...',
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ? 'exists' : 'missing'
@@ -77,9 +77,9 @@ async function fetchS3Data(period: string): Promise<TrendingDataItem[]> {
   
       const results = await Promise.all(
         Object.keys(periodMap).map(async (period) => {
-          console.log(`Fetching data for period: ${period}`);
+          // console.log(`Fetching data for period: ${period}`);
           const data = await fetchS3Data(period);
-          console.log(`Received data for ${period}, length:`, data.length);
+          // console.log(`Received data for ${period}, length:`, data.length);
           return { [periodMap[period as keyof typeof periodMap]]: data };
         })
       );
@@ -94,7 +94,7 @@ async function fetchS3Data(period: string): Promise<TrendingDataItem[]> {
         quarterlyData: []
       });
   
-      console.log('Final aggregated data:', finalData);
+      // console.log('Final aggregated data:', finalData);
       return finalData;
   
     } catch (error) {
@@ -113,7 +113,7 @@ async function fetchS3Data(period: string): Promise<TrendingDataItem[]> {
       const response = await fetchFromAPI<YouTubeAPIResponse>(API_ENDPOINTS.YOUTUBE);
       
       const data = JSON.parse(response.body) as YouTubeResponseData;
-      console.log('Parsed Data:', data);
+      // console.log('Parsed Data:', data);
   
       if (!data.videos || !Array.isArray(data.videos)) {
         console.error('Invalid data format:', data);

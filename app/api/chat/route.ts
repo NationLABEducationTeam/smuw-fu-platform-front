@@ -132,14 +132,14 @@ function parseModelResponse(modelId: ModelId, response: any) {
 export async function POST(request: Request) {
   try {
     const { message, modelId } = await request.json();
-    console.log('Received request:', { message, modelId });
+    // // console.log('Received request:', { message, modelId });
 
     // ChatGPT 처리
     if (modelId === 'gpt-4o') {
       try {
-        console.log('Calling ChatGPT API...');
+        // // console.log('Calling ChatGPT API...');
         const response = await callChatGPT(message);
-        console.log('ChatGPT response:', response);
+        // console.log('ChatGPT response:', response);
         return NextResponse.json({ response });
       } catch (error) {
         console.error('ChatGPT error:', error);
@@ -151,7 +151,7 @@ export async function POST(request: Request) {
     }
 
     // Bedrock 모델 처리
-    console.log('Calling Bedrock API...');
+    // console.log('Calling Bedrock API...');
     const payload = getModelPayload(modelId, message);
     const command = new InvokeModelCommand({
       modelId: modelId,
@@ -163,7 +163,7 @@ export async function POST(request: Request) {
     const response = await bedrock.send(command);
     const responseBody = JSON.parse(new TextDecoder().decode(response.body));
     const parsedResponse = parseModelResponse(modelId, responseBody);
-    console.log('Bedrock response:', parsedResponse);
+    // console.log('Bedrock response:', parsedResponse);
 
     return NextResponse.json({ response: parsedResponse });
   } catch (error) {

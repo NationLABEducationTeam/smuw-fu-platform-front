@@ -39,9 +39,9 @@ export function AnalysisPanel({ isOpen, onClose, data, isCollapsed, onToggle }: 
 
   useEffect(() => {
     if (data?.industries) {
-      console.log('분석 패널 데이터 수신:', data);
+      // console.log('분석 패널 데이터 수신:', data);
       const industryKeys = Object.keys(data.industries);
-      console.log('사용 가능한 업종 목록:', industryKeys);
+      // console.log('사용 가능한 업종 목록:', industryKeys);
       if (industryKeys.length > 0) {
         setSelectedIndustry(industryKeys[0]);
       }
@@ -67,7 +67,7 @@ export function AnalysisPanel({ isOpen, onClose, data, isCollapsed, onToggle }: 
   }
 
   const industryData = data.industries[selectedIndustry]
-  console.log('선택된 업종 데이터:', selectedIndustry, industryData);
+  // console.log('선택된 업종 데이터:', selectedIndustry, industryData);
 
   const dailySalesData = Object.entries(industryData.sales_analysis.daily_sales.data).map(([day, sales]) => ({
     day,
@@ -88,7 +88,7 @@ export function AnalysisPanel({ isOpen, onClose, data, isCollapsed, onToggle }: 
   const averageDailySales = totalSales / 7
 
   // 고객 수 관련 데이터 추가 로깅
-  console.log('고객 수 데이터:', industryData.sales_analysis.weekday_weekend);
+  // console.log('고객 수 데이터:', industryData.sales_analysis.weekday_weekend);
 
   // 접힌 상태일 때 표시할 축소된 패널
   if (isCollapsed) {

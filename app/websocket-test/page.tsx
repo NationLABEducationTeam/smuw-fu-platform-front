@@ -40,13 +40,13 @@ export default function WebSocketTest() {
     
     // 이벤트 핸들러 등록
     chatService.onOpen(() => {
-      console.log('WebSocket 연결됨');
+      // console.log('WebSocket 연결됨');
       setStatus('연결됨');
       setMessages(prev => [...prev, { type: 'system', content: '서버에 연결되었습니다.' }]);
     });
     
     chatService.onClose((event: any) => {
-      console.log(`WebSocket 연결 종료: 코드=${event.code}`);
+      // console.log(`WebSocket 연결 종료: 코드=${event.code}`);
       setStatus('연결 종료됨');
       setMessages(prev => [...prev, { type: 'system', content: `연결이 종료되었습니다. 코드: ${event.code}` }]);
     });

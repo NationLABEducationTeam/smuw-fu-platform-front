@@ -89,7 +89,7 @@ export const signIn = (username: string, password: string): Promise<any> => {
       },
       newPasswordRequired: (userAttributes, requiredAttributes) => {
         // 사용자가 처음 로그인할 때 암호 변경이 필요한 경우
-        console.log('새 비밀번호가 필요합니다.');
+        // console.log('새 비밀번호가 필요합니다.');
         resolve({ 
           success: false, 
           requireNewPassword: true,
