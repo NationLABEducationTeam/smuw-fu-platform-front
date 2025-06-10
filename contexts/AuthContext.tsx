@@ -38,7 +38,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           setUser(null)
         }
       } catch (error) {
-        console.error('사용자 정보 로드 오류:', error)
+        console.error('사용자 정보 로드 중 오류가 발생했습니다.:', error)
         setUser(null)
       } finally {
         setIsLoading(false)
