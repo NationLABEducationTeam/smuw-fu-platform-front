@@ -60,16 +60,25 @@ export default function Page() {
 
   const handleChatStream = useCallback((data: any) => {
     // console.log('스트리밍 메시지 수신:', data)
-    setStreamingMessage(prevMessage => {
-      // 이전 메시지가 없으면 새 메시지를 그대로 반환
-      if (prevMessage === null) return data.message;
-      // 이전 메시지에 새 메시지를 추가하여 반환
-      return prevMessage + data.message;
-    })
+    if (data && data.message) {
+      setStreamingMessage(prevMessage => {
+        // 이전 메시지가 없으면 새 메시지를 그대로 반환
+        if (prevMessage === null) return data.message;
+        // 이전 메시지에 새 메시지를 추가하여 반환
+        return prevMessage + data.message;
+      })
+    }
   }, [])
 
   const handleChatStreamEnd = useCallback((data: any) => {
     // console.log('스트리밍 종료 메시지 수신:', data)
+    if (!data || !data.message) {
+      console.error('잘못된 스트리밍 종료 데이터:', data)
+      setIsLoading(false)
+      setStreamingMessage(null)
+      return
+    }
+    
     setMessages(prev => {
       const updatedMessages = [...prev, { role: 'assistant' as const, content: data.message }]
       
@@ -108,11 +117,13 @@ export default function Page() {
   const handleErrorResponse = useCallback((error: any) => {
     console.error('오류 메시지 수신:', error)
     setIsLoading(false)
+    setStreamingMessage(null)
     
     // 오류 메시지를 사용자에게 표시
+    const errorMessage = error && error.message ? error.message : '알 수 없는 오류가 발생했습니다'
     setMessages(prev => [
       ...prev,
-      { role: 'assistant', content: `오류가 발생했습니다: ${error.message}` }
+      { role: 'assistant', content: `오류가 발생했습니다: ${errorMessage}` }
     ])
     scrollToBottom()
   }, [scrollToBottom])
@@ -273,7 +284,30 @@ export default function Page() {
         sessionId: sessionId
       }
       
-      chatService.sendChatRequest(request.message, request.modelId, request.sessionId)
+      const success = chatService.sendChatRequest(request.message, request.modelId, request.sessionId)
+      
+      if (!success) {
+        console.error('메시지 전송 실패')
+        setIsLoading(false)
+        setMessages(prev => [
+          ...prev,
+          { role: 'assistant', content: '메시지 전송에 실패했습니다. 다시 시도해주세요.' }
+        ])
+        return
+      }
+      
+      // 30초 타임아웃 설정
+      setTimeout(() => {
+        if (isLoading) {
+          console.log('응답 타임아웃 - 로딩 상태 해제')
+          setIsLoading(false)
+          setStreamingMessage(null)
+          setMessages(prev => [
+            ...prev,
+            { role: 'assistant', content: '응답 시간이 초과되었습니다. 다시 시도해주세요.' }
+          ])
+        }
+      }, 30000) // 30초 타임아웃
     } else {
       console.error('WebSocket 연결이 없습니다')
       setConnectionError(true)
